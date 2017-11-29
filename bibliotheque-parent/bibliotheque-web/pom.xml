@@ -28,10 +28,10 @@
 				</configuration>
 		</plugin>
     </plugins>
-       
-    
-    
+           
   </build>
+  
+  
   <dependencies>
   	<dependency>
   		<groupId>fr.uni.institute.library</groupId>
@@ -51,7 +51,6 @@
 	    <version>7.0</version>
 	    <scope>provided</scope>
 	</dependency>	
-  	
   	
   </dependencies>
 </project>
