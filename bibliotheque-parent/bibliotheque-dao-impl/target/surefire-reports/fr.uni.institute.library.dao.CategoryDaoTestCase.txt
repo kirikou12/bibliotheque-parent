@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: fr.uni.institute.library.dao.CategoryDaoTestCase
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.552 sec
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 0.235 sec <<< FAILURE! - in fr.uni.institute.library.dao.CategoryDaoTestCase
+testResearchCategoryById(fr.uni.institute.library.dao.CategoryDaoTestCase)  Time elapsed: 0.235 sec  <<< ERROR!
+java.lang.NoSuchMethodError: fr.uni.institute.library.dao.CategoryDao.researchCategoryById(I)Lfr/uni/institute/library/business/inventory/Category;
+	at fr.uni.institute.library.dao.CategoryDaoTestCase.testResearchCategoryById(CategoryDaoTestCase.java:67)
+
+testResearchAllCategories(fr.uni.institute.library.dao.CategoryDaoTestCase)  Time elapsed: 0.234 sec  <<< ERROR!
+java.lang.NullPointerException
+	at fr.uni.institute.library.dao.CategoryDaoTestCase.testResearchAllCategories(CategoryDaoTestCase.java:49)
+
+testResearchAllCategories(fr.uni.institute.library.dao.CategoryDaoTestCase)  Time elapsed: 0 sec  <<< ERROR!
+java.lang.NullPointerException
+	at fr.uni.institute.library.dao.CategoryDaoTestCase.tearDown(CategoryDaoTestCase.java:41)
+

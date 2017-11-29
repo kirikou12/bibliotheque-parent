@@ -60,7 +60,6 @@ public class CategoryDaoTestCase {
 	
 	
 	
-	
 	@Test
 	public void testResearchCategoryById() {
 		System.out.println("Réccupération d'une categorie ");
