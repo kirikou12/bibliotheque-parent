@@ -2,7 +2,7 @@ package fr.uni.institute.library.dao.jdbc;
 
 import java.sql.Connection;
 
-public class InventoryDaoJdbc {
+public  class InventoryDaoJdbc {
 
 	private Connection connection;
 

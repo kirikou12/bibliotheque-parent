@@ -25,7 +25,22 @@ public class AudioRecordDaoJdbc extends InventoryDaoJdbc implements
 		this.titleDao = titleDao;
 	}
 
-	
+	public void createAudioRecord(AudioRecord audioRecord) throws DaoException {
+		try {
+			titleDao.createTitle(audioRecord) ;
+			Connection conn = this.getConnection();
+			PreparedStatement pst = conn
+					.prepareStatement("insert into t_audio_cd (k_puid, label, duration, tracks) values (?, ?, ?, ?)");
+			pst.setInt(1, audioRecord.getId());
+			pst.setString(2, audioRecord.getLabel());
+			pst.setInt(3, audioRecord.getDuration());
+			pst.setString(4, audioRecord.getTracks());
+			pst.execute();
+		} catch (SQLException ex) {
+			throw new DaoException("SQL Error : " + ex.getMessage(), ex);
+		}
+	}
+
 	/**
 	 * calling this method supposes that audioRecord's relations have been
 	 * deleted
@@ -110,22 +125,4 @@ public class AudioRecordDaoJdbc extends InventoryDaoJdbc implements
 			throw new DaoException("SQL Error : " + ex.getMessage(), ex);
 		}
 	}
-
-
-	public void createAudioRecord(AudioRecord audioRecord) throws DaoException {
-		try {
-			titleDao.createTitle(audioRecord) ;
-			Connection conn = this.getConnection();
-			PreparedStatement pst = conn
-					.prepareStatement("insert into t_audio_cd (k_puid, label, duration, tracks) values (?, ?, ?, ?)");
-			pst.setInt(1, audioRecord.getId());
-			pst.setString(2, audioRecord.getLabel());
-			pst.setInt(3, audioRecord.getDuration());
-			pst.setString(4, audioRecord.getTracks());
-			pst.execute();
-		} catch (SQLException ex) {
-			throw new DaoException("SQL Error : " + ex.getMessage(), ex);
-		}
-	}
-
 }
